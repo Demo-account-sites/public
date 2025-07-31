@@ -13,30 +13,30 @@
             background-color: #f0f2f5;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Align to top for better layout */
+            align-items: flex-start;
             min-height: 100vh;
-            padding: 1.5rem; /* Reduced padding for a more integrated look */
+            padding: 1.5rem;
             box-sizing: border-box;
         }
 
         .calendar-container {
-            display: flex; /* Changed to flex row for side-by-side layout */
+            display: flex;
             flex-direction: row;
-            gap: 1.5rem; /* Gap between calendar content and side tab */
-            max-width: 950px; /* Smaller overall width for integration */
+            gap: 1.5rem;
+            max-width: 950px;
             width: 100%;
             background-color: #ffffff;
             border-radius: 1rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            padding: 2rem; /* Padding inside the container */
-            align-items: center; /* Changed from flex-start to center for vertical alignment */
+            padding: 2rem;
+            align-items: center;
         }
 
         .calendar-content-wrapper {
-            flex-grow: 1; /* Calendar content takes up available space */
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            gap: 1rem; /* Gap between header and grid */
+            gap: 1rem;
         }
 
         .calendar-header {
@@ -70,82 +70,77 @@
             cursor: pointer;
             transition: background-color 0.2s ease, transform 0.2s ease;
             position: relative;
-            min-height: 80px; /* Ensure cells have enough height */
+            min-height: 80px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
             font-size: 1.1rem;
             color: #2d3748;
-            overflow: hidden; /* Important to contain the corner triangles within the rounded cell */
+            overflow: hidden;
         }
 
         .date-cell:hover {
-            background-color: #e0f2fe; /* Light blue on hover */
+            background-color: #e0f2fe;
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            z-index: 10; /* Bring hovered cell to front */
+            z-index: 10;
         }
 
         .date-cell.today {
-            border: 2px solid #3b82f6; /* Blue border for today */
-            background-color: #eff6ff; /* Lighter blue for today's background */
+            border: 2px solid #3b82f6;
+            background-color: #eff6ff;
             color: #1e40af;
             font-weight: 700;
         }
 
-        /* Style for selected date cell */
         .date-cell.selected {
-            border: 2px solid #059669; /* Green border for selected */
-            background-color: #d1fae5; /* Lighter green background */
+            border: 2px solid #059669;
+            background-color: #d1fae5;
             color: #065f46;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         }
 
-        /* Corner Indicator Styling */
         .corner-indicator {
             position: absolute;
             width: 0;
             height: 0;
-            z-index: 5; /* Below the date number, above cell background */
-            box-shadow: none; /* No shadow for triangles */
+            z-index: 5;
+            box-shadow: none;
         }
 
         .corner-indicator.blue {
             top: 0;
             right: 0;
-            border-top: 15px solid #3b82f6; /* Blue part of the triangle */
-            border-left: 15px solid transparent; /* Transparent part to form triangle */
+            border-top: 15px solid #3b82f6;
+            border-left: 15px solid transparent;
         }
 
         .corner-indicator.red {
             bottom: 0;
             right: 0;
-            border-bottom: 15px solid #ef4444; /* Red part of the triangle */
-            border-left: 15px solid transparent; /* Transparent part to form triangle */
+            border-bottom: 15px solid #ef4444;
+            border-left: 15px solid transparent;
         }
 
-        /* Class to hide indicators */
         .corner-indicator.hidden-indicator {
             display: none;
         }
 
-        /* Side Tab Styling */
         .side-tab {
-            width: 280px; /* Smaller width for the side tab */
+            width: 280px;
             background-color: #ffffff;
-            border-radius: 1rem; /* Full rounding if it's a standalone block */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+            border-radius: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             padding: 1.5rem;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            /* Control visibility with opacity and pointer-events for smooth transition */
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-            flex-shrink: 0; /* Prevents it from shrinking */
+            flex-shrink: 0;
         }
 
         .side-tab.show {
@@ -154,7 +149,7 @@
         }
 
         .side-tab-content {
-            overflow-y: auto; /* Enable scrolling for events and widget */
+            overflow-y: auto;
             flex-grow: 1;
         }
 
@@ -166,10 +161,10 @@
             margin-bottom: 0.75rem;
             font-size: 0.95rem;
             color: #1e40af;
-            display: flex; /* Use flex to align event text and button */
-            justify-content: space-between; /* Space out content */
-            align-items: center; /* Vertically align */
-            gap: 0.5rem; /* Gap between text and button */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .event-item strong {
@@ -177,19 +172,19 @@
         }
 
         .event-book-button {
-            background-color: #22c55e; /* Green for booking */
+            background-color: #22c55e;
             color: white;
             font-weight: 600;
             padding: 0.4rem 0.8rem;
-            border-radius: 0.375rem; /* rounded-md */
+            border-radius: 0.375rem;
             font-size: 0.8rem;
             cursor: pointer;
             transition: background-color 0.2s ease;
-            flex-shrink: 0; /* Prevent button from shrinking */
+            flex-shrink: 0;
         }
 
         .event-book-button:hover {
-            background-color: #16a34a; /* Darker green on hover */
+            background-color: #16a34a;
         }
 
         .book-both-container {
@@ -202,7 +197,7 @@
         }
 
         .book-both-button {
-            background-color: #3b82f6; /* Blue for combined booking */
+            background-color: #3b82f6;
             color: white;
             font-weight: 600;
             padding: 0.5rem 1rem;
@@ -215,21 +210,20 @@
         }
 
         .book-both-button:hover {
-            background-color: #2563eb; /* Darker blue on hover */
+            background-color: #2563eb;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 1024px) {
             .calendar-container {
-                flex-direction: column; /* Stack on smaller screens */
+                flex-direction: column;
                 padding: 1.5rem;
-                max-width: 600px; /* Adjust max-width for smaller screens */
+                max-width: 600px;
             }
             .side-tab {
-                width: 100%; /* Take full width when stacked */
-                margin-top: 1.5rem; /* Space when stacked */
-                border-radius: 1rem; /* Full rounding when stacked */
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+                width: 100%;
+                margin-top: 1.5rem;
+                border-radius: 1rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             }
         }
 
@@ -258,7 +252,6 @@
             </div>
 
             <div class="calendar-grid" id="calendarGrid">
-                <!-- Day names - Adjusted to start with Monday -->
                 <div class="day-name">Mon</div>
                 <div class="day-name">Tue</div>
                 <div class="day-name">Wed</div>
@@ -266,22 +259,20 @@
                 <div class="day-name">Fri</div>
                 <div class="day-name">Sat</div>
                 <div class="day-name">Sun</div>
-                <!-- Dates will be populated by JavaScript -->
             </div>
         </div>
 
         <div class="side-tab" id="sideTab">
             <h3 class="text-2xl font-semibold text-gray-800" id="sideTabDate"></h3>
             <div class="side-tab-content">
-                <!-- Events View -->
                 <div id="eventsView" class="flex flex-col gap-3">
                     <p class="text-gray-500" id="eventsPlaceholder">Hover over a date to see events.</p>
-                    <div id="eventsList"></div> <!-- Events will be added here -->
+                    <div id="eventsList"></div>
                     <div id="bookBothContainer" class="book-both-container hidden">
                         <p class="text-gray-700 mb-2">Want to book both events?</p>
                         <button id="bookBothButton" class="book-both-button">Book Both Events</button>
                     </div>
-                    <p class="text-gray-500 text-sm mt-2" id="loadingStatus"></p> <!-- Unified Loading status -->
+                    <p class="text-gray-500 text-sm mt-2" id="loadingStatus"></p>
                 </div>
             </div>
             
@@ -292,15 +283,18 @@
     </div>
 
     <script>
-        // Object to store fetched Kynren availabilities (cached)
         const kynrenAvailabilitiesCache = {};
-        // Object to store fetched Park Entry availabilities (cached)
         const parkEntryAvailabilitiesCache = {};
 
         // Smeetz API Key
         const SMEETZ_API_KEY = 'l5oiXlg5KVI9Sre2JlTY_RIqVJJHVmJjloKZ5hZJFEg';
         const KYREN_OPTION_ID = '7396b084-81e0-4016-9492-acb2e4771c76';
-        const PARK_ENTRY_OPTION_ID = '61d3cf87-2092-4a94-88c1-01a718a5b447'; // New option ID for Park Entry
+        const PARK_ENTRY_OPTION_ID = '61d3cf87-2092-4a94-88c1-01a718a5b447';
+
+        // Booking URLs
+        const KYNREN_BOOKING_URL = "https://widget.smeetz.com/kynren";
+        const PARK_ENTRY_BOOKING_URL = "https://widget.smeetz.com/park-entry";
+        const COMBO_BOOKING_URL = "https://widget.smeetz.com/combo";
 
         const calendarGrid = document.getElementById('calendarGrid');
         const sideTab = document.getElementById('sideTab');
@@ -308,7 +302,7 @@
         const eventsView = document.getElementById('eventsView');
         const eventsPlaceholder = document.getElementById('eventsPlaceholder');
         const eventsList = document.getElementById('eventsList');
-        const loadingStatus = document.getElementById('loadingStatus'); // Unified loading status element
+        const loadingStatus = document.getElementById('loadingStatus');
         const closeSideTabButton = document.getElementById('closeSideTab');
         const bookBothContainer = document.getElementById('bookBothContainer');
         const bookBothButton = document.getElementById('bookBothButton');
@@ -316,43 +310,29 @@
         const year = 2026;
         const month = 0; // January is 0 in JavaScript Date objects
 
-        let sideTabHideTimeout; // Declare a variable to hold the timeout ID
-        let selectedDateCell = null; // To keep track of the clicked date cell
-        let isSideTabFixed = false; // To control if the side tab should hide on mouseout
+        let sideTabHideTimeout;
+        let selectedDateCell = null;
+        let isSideTabFixed = false;
+        const dateCellElements = {};
 
-        // Store references to date cells for easy access after data fetch
-        const dateCellElements = {}; // key: formattedDate, value: dateCell DOM element
-
-        // Helper function for exponential backoff
         async function fetchWithExponentialBackoff(url, options = {}, retries = 3, delay = 1000) {
             for (let i = 0; i < retries; i++) {
                 try {
                     const response = await fetch(url, options);
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return await response.json();
                 } catch (error) {
                     if (i < retries - 1) {
                         console.warn(`Fetch failed, retrying in ${delay / 1000}s...`, error);
                         await new Promise(res => setTimeout(res, delay));
-                        delay *= 2; // Exponential increase
+                        delay *= 2;
                     } else {
-                        throw error; // Last retry failed, rethrow
+                        throw error;
                     }
                 }
             }
         }
 
-        /**
-         * Fetches all availabilities for a given event option ID for the entire month.
-         * Stores the results in the provided cache object, keyed by date.
-         * @param {string} optionId - The Smeetz option ID for the event.
-         * @param {string} eventTitle - The display title of the event (e.g., "Kynren").
-         * @param {object} cacheObject - The object to store cached availabilities (e.g., kynrenAvailabilitiesCache).
-         * @param {string} startMonthDate - The start date of the month in YYYY-MM-DD format.
-         * @param {string} endMonthDate - The end date of the month in YYYY-MM-DD format.
-         */
         async function fetchEventsForMonth(optionId, eventTitle, cacheObject, startMonthDate, endMonthDate) {
             const localDateTimeStart = `${startMonthDate}T00:00:00`;
             const localDateTimeEnd = `${endMonthDate}T23:59:59`;
@@ -366,18 +346,13 @@
                     }
                 });
 
-                // Clear existing cache for this event type before populating
-                for (const key in cacheObject) {
-                    delete cacheObject[key];
-                }
+                for (const key in cacheObject) delete cacheObject[key];
 
                 if (data.status === 'success' && data.data && data.data.length > 0) {
                     data.data.forEach(event => {
-                        const eventDate = event.localDateTimeStart.split('T')[0]; // Get YYYY-MM-DD
-                        if (event.available) { // Only add if available
-                            if (!cacheObject[eventDate]) {
-                                cacheObject[eventDate] = [];
-                            }
+                        const eventDate = event.localDateTimeStart.split('T')[0];
+                        if (event.available) {
+                            if (!cacheObject[eventDate]) cacheObject[eventDate] = [];
                             cacheObject[eventDate].push({
                                 startTime: new Date(event.localDateTimeStart).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
                                 endTime: new Date(event.localDateTimeEnd).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
@@ -400,17 +375,12 @@
             loadingStatus.textContent = `Loading all event data for January...`;
             loadingStatus.classList.remove('hidden');
 
-            // Fetch Kynren events
             await fetchEventsForMonth(KYREN_OPTION_ID, 'Kynren night show', kynrenAvailabilitiesCache, startMonthDate, endMonthDate);
-            // Fetch Park Entry events
             await fetchEventsForMonth(PARK_ENTRY_OPTION_ID, 'Park Entry', parkEntryAvailabilitiesCache, startMonthDate, endMonthDate);
 
             loadingStatus.textContent = "All event data loaded.";
-            setTimeout(() => {
-                loadingStatus.classList.add('hidden');
-            }, 1000);
-
-            updateAvailabilityIndicators(); // After all data is loaded, update indicators
+            setTimeout(() => loadingStatus.classList.add('hidden'), 1000);
+            updateAvailabilityIndicators();
         }
 
         function updateAvailabilityIndicators() {
@@ -422,40 +392,25 @@
                     const blueIndicator = dateCell.querySelector('.corner-indicator.blue');
                     const redIndicator = dateCell.querySelector('.corner-indicator.red');
 
-                    // Update blue indicator for Kynren
                     if (blueIndicator) {
-                        if (kynrenAvailabilitiesCache[formattedDate] && kynrenAvailabilitiesCache[formattedDate].length > 0) {
-                            blueIndicator.classList.remove('hidden-indicator');
-                        } else {
-                            blueIndicator.classList.add('hidden-indicator');
-                        }
+                        blueIndicator.classList.toggle('hidden-indicator', !(kynrenAvailabilitiesCache[formattedDate] && kynrenAvailabilitiesCache[formattedDate].length > 0));
                     }
 
-                    // Update red indicator for Park Entry
                     if (redIndicator) {
-                        if (parkEntryAvailabilitiesCache[formattedDate] && parkEntryAvailabilitiesCache[formattedDate].length > 0) {
-                            redIndicator.classList.remove('hidden-indicator');
-                        } else {
-                            redIndicator.classList.add('hidden-indicator');
-                        }
+                        redIndicator.classList.toggle('hidden-indicator', !(parkEntryAvailabilitiesCache[formattedDate] && parkEntryAvailabilitiesCache[formattedDate].length > 0));
                     }
                 }
             }
         }
 
         function generateCalendar() {
-            // Clear previous days if any
-            while (calendarGrid.children.length > 7) { // Keep day names
+            while (calendarGrid.children.length > 7) {
                 calendarGrid.removeChild(calendarGrid.lastChild);
             }
 
-            // Calculate the first day of the month, adjusting for Monday as the start of the week
-            // getDay() returns 0 for Sunday, 1 for Monday, ..., 6 for Saturday.
-            // (date.getDay() + 6) % 7 converts it to: Mon=0, Tue=1, ..., Sun=6
             const firstDayOfMonthAdjusted = (new Date(year, month, 1).getDay() + 6) % 7;
-            const daysInMonth = new Date(year, month + 1, 0).getDate(); // Get last day of the month
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-            // Add date cells
             for (let day = 1; day <= daysInMonth; day++) {
                 const dateCell = document.createElement('div');
                 const formattedDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
@@ -463,25 +418,18 @@
                 dateCell.classList.add('date-cell');
                 dateCell.textContent = day;
                 dateCell.dataset.date = formattedDate;
-
-                // Store reference to the date cell
                 dateCellElements[formattedDate] = dateCell;
 
-                // Set grid-column-start for the first day to align it correctly
-                if (day === 1) {
-                    dateCell.style.gridColumnStart = firstDayOfMonthAdjusted + 1;
-                }
+                if (day === 1) dateCell.style.gridColumnStart = firstDayOfMonthAdjusted + 1;
 
-                // Add corner indicators
                 const blueIndicator = document.createElement('div');
-                blueIndicator.classList.add('corner-indicator', 'blue', 'hidden-indicator'); // Initially hidden
+                blueIndicator.classList.add('corner-indicator', 'blue', 'hidden-indicator');
                 dateCell.appendChild(blueIndicator);
 
                 const redIndicator = document.createElement('div');
-                redIndicator.classList.add('corner-indicator', 'red', 'hidden-indicator'); // Initially hidden
+                redIndicator.classList.add('corner-indicator', 'red', 'hidden-indicator');
                 dateCell.appendChild(redIndicator);
 
-                // Highlight today's date if it's January 2026
                 const today = new Date();
                 if (today.getFullYear() === year && today.getMonth() === month && today.getDate() === day) {
                     dateCell.classList.add('today');
@@ -489,18 +437,17 @@
 
                 dateCell.addEventListener('mouseover', handleDateHover);
                 dateCell.addEventListener('mouseout', handleDateLeave);
-                dateCell.addEventListener('click', handleDateClick); // Add click listener
+                dateCell.addEventListener('click', handleDateClick);
                 calendarGrid.appendChild(dateCell);
             }
-            initializeAllEventData(); // Fetch all events when calendar is generated
+            initializeAllEventData();
         }
 
         function displaySideTabContent(date) {
             sideTabDate.textContent = `Events for ${new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`;
-            eventsList.innerHTML = ''; // Clear previous content
-            eventsPlaceholder.classList.add('hidden'); // Hide placeholder once events are loaded
+            eventsList.innerHTML = '';
+            eventsPlaceholder.classList.add('hidden');
 
-            // Retrieve from cache directly
             const kynrenEventsForDate = kynrenAvailabilitiesCache[date] || [];
             const parkEntryEventsForDate = parkEntryAvailabilitiesCache[date] || [];
 
@@ -519,54 +466,52 @@
                 bookEventButton.classList.add('event-book-button');
                 bookEventButton.textContent = 'Book';
                 bookEventButton.addEventListener('click', () => {
-                    console.log(`Booking for Kynren on ${date} at ${event.startTime}`);
-
-                    const url = "https://widget.smeetz.com/product/list/73060?listView=false&cats=133063&productId=73060&wid=4103&ocol=%23AB12C9&fid=413719589429746&gaid=G-0TNDMPVPEE&gtmid=GTM-KWMMWCR&orgid=1&tid=yuUt8aONCBEBksDH&bcol=%23000000&ncol=%23FFFFFF&ttcol=%23FE0000&tcol=%2330AABC&font=Garamond&uat=1753941660577&hostUrl=http://127.0.0.1:5500/widget.html&_ga=null";
-                    const windowName = "smeetzPopup";
-                    const windowFeatures = "width=800,height=600,scrollbars=yes,resizable=yes";
-
-                    window.open(url, windowName, windowFeatures);
+                    window.open(
+                        `${KYNREN_BOOKING_URL}?date=${date}&time=${event.startTime}`,
+                        "smeetzPopup",
+                        "width=800,height=600,scrollbars=yes,resizable=yes"
+                    );
                 });
                 
                 eventItem.appendChild(bookEventButton);
                 eventsList.appendChild(eventItem);
             });
 
-            // Display each Park Entry event as a separate row
-            parkEntryEventsForDate.forEach(event => {
+            // Display Park Entry as a single row with first start and last end time
+            if (parkEntryEventsForDate.length > 0) {
                 hasEvents = true;
+                const firstOpening = parkEntryEventsForDate[0].startTime;
+                const lastClosure = parkEntryEventsForDate[parkEntryEventsForDate.length - 1].endTime;
+
                 const eventItem = document.createElement('div');
                 eventItem.classList.add('event-item');
                 const eventDetails = document.createElement('span');
-                eventDetails.innerHTML = `<strong>Park Entry (${event.startTime} - ${event.endTime}):</strong>`;
+                eventDetails.innerHTML = `<strong>Park Entry (${firstOpening} - ${lastClosure}):</strong>`;
                 eventItem.appendChild(eventDetails);
 
                 const bookEventButton = document.createElement('button');
                 bookEventButton.classList.add('event-book-button');
                 bookEventButton.textContent = 'Book';
                 bookEventButton.addEventListener('click', () => {
-                    console.log(`Booking for Park Entry on ${date} at ${event.startTime}`);
-                    
-                    const url = "https://widget.smeetz.com/product/list/73060?listView=false&cats=133063&productId=73060&wid=4103&ocol=%23AB12C9&fid=413719589429746&gaid=G-0TNDMPVPEE&gtmid=GTM-KWMMWCR&orgid=1&tid=yuUt8aONCBEBksDH&bcol=%23000000&ncol=%23FFFFFF&ttcol=%23FE0000&tcol=%2330AABC&font=Garamond&uat=1753941660577&hostUrl=http://127.0.0.1:5500/widget.html&_ga=null";
-                    const windowName = "smeetzPopup";
-                    const windowFeatures = "width=800,height=600,scrollbars=yes,resizable=yes";
-
-                    window.open(url, windowName, windowFeatures);
+                    window.open(
+                        `${PARK_ENTRY_BOOKING_URL}?date=${date}`,
+                        "smeetzPopup",
+                        "width=800,height=600,scrollbars=yes,resizable=yes"
+                    );
                 });
                 eventItem.appendChild(bookEventButton);
                 eventsList.appendChild(eventItem);
-            });
+            }
 
             // Show "Book Both" container if both event types are available
             if (kynrenEventsForDate.length > 0 && parkEntryEventsForDate.length > 0) {
                 bookBothContainer.classList.remove('hidden');
-                // Update the "Book Both" button click handler
                 bookBothButton.onclick = () => {
-                    console.log(`Booking both events on ${date}`);
-                    const url = "https://widget.smeetz.com/product/list/73060?listView=false&cats=133063&productId=73060&wid=4103&ocol=%23AB12C9&fid=413719589429746&gaid=G-0TNDMPVPEE&gtmid=GTM-KWMMWCR&orgid=1&tid=yuUt8aONCBEBksDH&bcol=%23000000&ncol=%23FFFFFF&ttcol=%23FE0000&tcol=%2330AABC&font=Garamond&uat=1753941660577&hostUrl=http://127.0.0.1:5500/widget.html&_ga=null";
-                    const windowName = "smeetzPopup";
-                    const windowFeatures = "width=800,height=600,scrollbars=yes,resizable=yes";
-                    window.open(url, windowName, windowFeatures);
+                    window.open(
+                        `${COMBO_BOOKING_URL}?date=${date}`,
+                        "smeetzPopup",
+                        "width=800,height=600,scrollbars=yes,resizable=yes"
+                    );
                 };
             } else {
                 bookBothContainer.classList.add('hidden');
@@ -577,68 +522,52 @@
                 bookBothContainer.classList.add('hidden');
             }
 
-            // Ensure events view is shown
             eventsView.classList.remove('hidden');
             sideTab.classList.add('show');
             loadingStatus.classList.add('hidden');
         }
 
         function handleDateHover(event) {
-            // Only show/update on hover if the side tab is not currently fixed
             if (!isSideTabFixed) {
-                clearTimeout(sideTabHideTimeout); // Clear any pending hide timeout
+                clearTimeout(sideTabHideTimeout);
                 displaySideTabContent(event.currentTarget.dataset.date);
             }
         }
 
         function handleDateLeave() {
-            // Only hide if the side tab is not currently fixed
             if (!isSideTabFixed) {
                 sideTabHideTimeout = setTimeout(() => {
-                    if (!sideTab.matches(':hover')) {
-                        sideTab.classList.remove('show');
-                    }
-                }, 200); // 200ms delay
+                    if (!sideTab.matches(':hover')) sideTab.classList.remove('show');
+                }, 200);
             }
         }
 
         function handleDateClick(event) {
-            // If there's a previously selected cell, remove its 'selected' class
-            if (selectedDateCell) {
-                selectedDateCell.classList.remove('selected');
-            }
-
-            // Set the new selected cell
+            if (selectedDateCell) selectedDateCell.classList.remove('selected');
             selectedDateCell = event.currentTarget;
             selectedDateCell.classList.add('selected');
-
-            // Fix the side tab
             isSideTabFixed = true;
-            clearTimeout(sideTabHideTimeout); // Ensure it doesn't hide immediately
-            displaySideTabContent(selectedDateCell.dataset.date); // Update content for clicked date
+            clearTimeout(sideTabHideTimeout);
+            displaySideTabContent(selectedDateCell.dataset.date);
         }
 
-        // Keep side tab visible if mouse enters it after leaving a date cell
         sideTab.addEventListener('mouseover', () => {
-            clearTimeout(sideTabHideTimeout); // Clear any pending hide timeout
-            sideTab.classList.add('show'); // Ensure it's shown
+            clearTimeout(sideTabHideTimeout);
+            sideTab.classList.add('show');
         });
 
         sideTab.addEventListener('mouseout', (event) => {
-            // Only hide if the side tab is not fixed and mouse leaves the side tab area
             if (!isSideTabFixed) {
                 sideTabHideTimeout = setTimeout(() => {
                     if (!calendarGrid.contains(event.relatedTarget) && !sideTab.contains(event.relatedTarget)) {
                         sideTab.classList.remove('show');
                     }
-                }, 200); // 200ms delay
+                }, 200);
             }
         });
 
-        // Close button for mobile/smaller screens
         closeSideTabButton.addEventListener('click', () => {
             sideTab.classList.remove('show');
-            // Unfix the side tab and remove selection from date cell
             isSideTabFixed = false;
             if (selectedDateCell) {
                 selectedDateCell.classList.remove('selected');
@@ -646,7 +575,6 @@
             }
         });
 
-        // Initialize calendar on page load
         window.onload = generateCalendar;
     </script>
 </body>
